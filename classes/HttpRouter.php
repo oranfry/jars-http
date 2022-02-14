@@ -27,8 +27,8 @@ class HttpRouter extends \subsimple\Router
         'POST /preview' => ['PAGE' => 'preview', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
         // read
-        'GET /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'line/index', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /([a-z]+)/fields' => ['LINETYPE_NAME', 'PAGE' => 'line/fields', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'get', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /([a-z]+)/fields' => ['LINETYPE_NAME', 'PAGE' => 'fields', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
         // delete
         'DELETE /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'line/delete', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
@@ -38,13 +38,20 @@ class HttpRouter extends \subsimple\Router
          ***************************************/
 
         'GET /record/([a-z_]+)/([A-Z0-9]+)' => ['TABLE_NAME', 'RECORD_ID', 'PAGE' => 'record/index', 'LAYOUT' => 'readfile', 'AUTHSCHEME' => 'header'],
-        'GET /record/([a-z_]+)/([A-Z0-9]+)/download' => ['TABLE_NAME', 'RECORD_ID', 'PAGE' => 'record/downoad', 'LAYOUT' => 'readfile', 'AUTHSCHEME' => 'header'],
 
         /***************************************
          *               REPORT                *
          ***************************************/
 
-        'GET /report/([a-z]+)/groups' => ['REPORT_NAME', 'PAGE' => 'report/groups', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => ['REPORT_NAME', 'GROUP', 'PAGE' => 'report/get', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /report/([a-z]+)/groups' => ['REPORT_NAME', 'PAGE' => 'groups', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => ['REPORT_NAME', 'GROUP', 'PAGE' => 'group', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+
+        /***************************************
+         *              SEQUENCE               *
+         ***************************************/
+
+        'GET /n2h/([0-9]+)' => ['N', 'PAGE' => 'n2h', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /h2n/([a-zA-Z0-9-]+)' => ['H', 'PAGE' => 'n2h', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
    ];
 }
