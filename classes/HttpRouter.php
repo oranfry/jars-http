@@ -31,13 +31,13 @@ class HttpRouter extends \subsimple\Router
         'GET /([a-z]+)/fields' => ['LINETYPE_NAME', 'PAGE' => 'fields', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
         // delete
-        'DELETE /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'line/delete', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'DELETE /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'delete', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
         /***************************************
          *               RECORD                *
          ***************************************/
 
-        'GET /record/([a-z_]+)/([A-Z0-9]+)' => ['TABLE_NAME', 'RECORD_ID', 'PAGE' => 'record/index', 'LAYOUT' => 'readfile', 'AUTHSCHEME' => 'header'],
+        'GET /record/([a-z_]+)/([A-Z0-9]+)' => ['TABLE_NAME', 'RECORD_ID', 'PAGE' => 'record', 'LAYOUT' => 'file', 'AUTHSCHEME' => 'header'],
 
         /***************************************
          *               REPORT                *
