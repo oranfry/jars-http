@@ -45,7 +45,7 @@ class HttpRouter extends \subsimple\Router
 
         'GET /report/([a-z]+)/groups' => ['REPORT_NAME', 'PAGE' => 'groups', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
         'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => ['REPORT_NAME', 'GROUP', 'PAGE' => 'group', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-
+        'GET /refresh' => ['PAGE' => 'refresh', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
         /***************************************
          *              SEQUENCE               *
