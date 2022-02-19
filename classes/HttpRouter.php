@@ -33,6 +33,9 @@ class HttpRouter extends \subsimple\Router
         // delete
         'DELETE /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'delete', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
 
+        // linetypes
+        'GET /linetypes' => ['REPORT_NAME' => null, 'PAGE' => 'linetypes', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
         /***************************************
          *               RECORD                *
          ***************************************/
@@ -43,6 +46,8 @@ class HttpRouter extends \subsimple\Router
          *               REPORT                *
          ***************************************/
 
+        'GET /reports' => ['PAGE' => 'reports', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /linetypes/([a-z]+)' => ['REPORT_NAME', 'PAGE' => 'linetypes', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
         'GET /report/([a-z]+)/groups' => ['REPORT_NAME', 'PAGE' => 'groups', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
         'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => ['REPORT_NAME', 'GROUP', 'PAGE' => 'group', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
         'GET /refresh' => ['PAGE' => 'refresh', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
