@@ -10,53 +10,149 @@ class HttpRouter extends \subsimple\Router
          ***************************************/
 
         // login
-        'POST /auth/login' => ['PAGE' => 'login', 'AUTHSCHEME' => 'none', 'LAYOUT' => 'json'],
+
+        'POST /auth/login' => [
+            'AUTHSCHEME' => 'none',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/login',
+        ],
 
         // logout
-        'POST /auth/logout' => ['PAGE' => 'logout', 'AUTHSCHEME' => 'header', 'LAYOUT' => 'json'],
+
+        'POST /auth/logout' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/logout',
+        ],
 
         // touch token
-        'GET /touch' => ['PAGE' => 'touch', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+        'GET /touch' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/touch',
+        ],
 
         /***************************************
          *                LINE                 *
          ***************************************/
 
         // save
-        'POST /' => ['PAGE' => 'save', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'POST /preview' => ['PAGE' => 'preview', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+        'POST /' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/save',
+        ],
+
+        'POST /preview' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/preview',
+        ],
 
         // read
-        'GET /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'get', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /([a-z]+)/fields' => ['LINETYPE_NAME', 'PAGE' => 'fields', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+        'GET /([a-z]+)/([A-Z0-9]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/get',
+            0 => 'LINETYPE_NAME',
+            1 => 'LINE_ID',
+        ],
+
+        'GET /([a-z]+)/fields' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/fields',
+            0 => 'LINETYPE_NAME',
+        ],
 
         // delete
-        'DELETE /([a-z]+)/([A-Z0-9]+)' => ['LINETYPE_NAME', 'LINE_ID', 'PAGE' => 'delete', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+        'DELETE /([a-z]+)/([A-Z0-9]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/delete',
+            0 => 'LINETYPE_NAME',
+            1 => 'LINE_ID',
+        ],
 
         // linetypes
-        'GET /linetypes' => ['REPORT_NAME' => null, 'PAGE' => 'linetypes', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+
+        'GET /linetypes' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/linetypes',
+            'REPORT_NAME' => null,
+        ],
 
         /***************************************
          *               RECORD                *
          ***************************************/
 
-        'GET /record/([a-z_]+)/([A-Z0-9]+)' => ['TABLE_NAME', 'RECORD_ID', 'PAGE' => 'record', 'LAYOUT' => 'file', 'AUTHSCHEME' => 'header'],
+        'GET /record/([a-z_]+)/([A-Z0-9]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/file',
+            'PAGE' => 'jars/http/record',
+            0 => 'TABLE_NAME',
+            1 => 'RECORD_ID',
+        ],
 
         /***************************************
          *               REPORT                *
          ***************************************/
 
-        'GET /reports' => ['PAGE' => 'reports', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /linetypes/([a-z]+)' => ['REPORT_NAME', 'PAGE' => 'linetypes', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /report/([a-z]+)/groups' => ['REPORT_NAME', 'PAGE' => 'groups', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => ['REPORT_NAME', 'GROUP', 'PAGE' => 'group', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /refresh' => ['PAGE' => 'refresh', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /reports' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/reports',
+        ],
+
+        'GET /linetypes/([a-z]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/linetypes',
+            0 => 'REPORT_NAME',
+        ],
+
+        'GET /report/([a-z]+)/groups' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/groups',
+            0 => 'REPORT_NAME',
+        ],
+
+        'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/group',
+            0 => 'REPORT_NAME',
+            1 => 'GROUP',
+        ],
+
+        'GET /refresh' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/refresh',
+        ],
 
         /***************************************
          *              SEQUENCE               *
          ***************************************/
 
-        'GET /n2h/([0-9]+)' => ['N', 'PAGE' => 'n2h', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
-        'GET /h2n/([a-zA-Z0-9-]+)' => ['H', 'PAGE' => 'n2h', 'LAYOUT' => 'json', 'AUTHSCHEME' => 'header'],
+        'GET /n2h/([0-9]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/n2h',
+            0 => 'N',
+        ],
+
+        'GET /h2n/([a-zA-Z0-9-]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/n2h',
+            0 => 'H',
+        ],
    ];
 }
