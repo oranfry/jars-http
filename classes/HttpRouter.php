@@ -53,7 +53,7 @@ class HttpRouter extends \subsimple\Router
 
         // read
 
-        'GET /([a-z]+)/([A-Z0-9]+)' => [
+        'GET /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'jars/http/json',
             'PAGE' => 'jars/http/get',
@@ -70,7 +70,7 @@ class HttpRouter extends \subsimple\Router
 
         // delete
 
-        'DELETE /([a-z]+)/([A-Z0-9]+)' => [
+        'DELETE /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'jars/http/json',
             'PAGE' => 'jars/http/delete',
@@ -91,7 +91,7 @@ class HttpRouter extends \subsimple\Router
          *               RECORD                *
          ***************************************/
 
-        'GET /record/([a-z_]+)/([A-Z0-9]+)' => [
+        'GET /record/([a-z_]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'jars/http/file',
             'PAGE' => 'jars/http/record',
