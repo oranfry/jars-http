@@ -53,19 +53,19 @@ class HttpRouter extends \subsimple\Router
 
         // read
 
+        'GET /fields/([a-z]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/json',
+            'PAGE' => 'jars/http/fields',
+            0 => 'LINETYPE_NAME',
+        ],
+
         'GET /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'jars/http/json',
             'PAGE' => 'jars/http/get',
             0 => 'LINETYPE_NAME',
             1 => 'LINE_ID',
-        ],
-
-        'GET /([a-z]+)/fields' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
-            'PAGE' => 'jars/http/fields',
-            0 => 'LINETYPE_NAME',
         ],
 
         // delete
