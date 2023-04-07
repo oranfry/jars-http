@@ -109,7 +109,7 @@ class HttpRouter extends \subsimple\Router
             'PAGE' => 'jars/http/reports',
         ],
 
-        'GET /linetypes/([a-z]+)' => [
+        'GET /report/([a-z]+)/linetypes' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'jars/http/json',
             'PAGE' => 'jars/http/linetypes',
