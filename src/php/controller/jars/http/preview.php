@@ -7,4 +7,7 @@ $jars->filesystem(new Filesystem(Filesystem::NO_PERSIST));
 
 return [
     'data' => $jars->preview($lines),
+    'headers' => [
+        'X-Version' => $jars->version(),
+    ],
 ];

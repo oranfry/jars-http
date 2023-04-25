@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'version' => $jars->refresh(),
+    'headers' => [
+        'X-Version' => $jars->version(),
+    ],
 ];

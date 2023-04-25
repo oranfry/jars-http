@@ -1,2 +1,2 @@
-# jars
-Generic Frontend to Jars
+# jars-http
+Exposes a local jars api over http

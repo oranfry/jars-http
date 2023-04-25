@@ -13,7 +13,7 @@ class HttpRouter extends \subsimple\Router
 
         'POST /auth/login' => [
             'AUTHSCHEME' => 'none',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/login',
         ],
 
@@ -21,7 +21,7 @@ class HttpRouter extends \subsimple\Router
 
         'POST /auth/logout' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/logout',
         ],
 
@@ -29,7 +29,7 @@ class HttpRouter extends \subsimple\Router
 
         'GET /touch' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/touch',
         ],
 
@@ -41,13 +41,13 @@ class HttpRouter extends \subsimple\Router
 
         'POST /' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/save',
         ],
 
         'POST /preview' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/preview',
         ],
 
@@ -55,14 +55,14 @@ class HttpRouter extends \subsimple\Router
 
         'GET /fields/([a-z]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/fields',
             0 => 'LINETYPE_NAME',
         ],
 
         'GET /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/get',
             0 => 'LINETYPE_NAME',
             1 => 'LINE_ID',
@@ -72,7 +72,7 @@ class HttpRouter extends \subsimple\Router
 
         'DELETE /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/delete',
             0 => 'LINETYPE_NAME',
             1 => 'LINE_ID',
@@ -82,7 +82,7 @@ class HttpRouter extends \subsimple\Router
 
         'GET /linetypes' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/linetypes',
             'REPORT_NAME' => null,
         ],
@@ -105,27 +105,27 @@ class HttpRouter extends \subsimple\Router
 
         'GET /reports' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/reports',
         ],
 
         'GET /report/([a-z]+)/linetypes' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/linetypes',
             0 => 'REPORT_NAME',
         ],
 
         'GET /report/([a-z]+)/groups' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/groups',
             0 => 'REPORT_NAME',
         ],
 
         'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/group',
             0 => 'REPORT_NAME',
             1 => 'GROUP',
@@ -133,7 +133,7 @@ class HttpRouter extends \subsimple\Router
 
         'GET /refresh' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/refresh',
         ],
 
@@ -143,14 +143,14 @@ class HttpRouter extends \subsimple\Router
 
         'GET /n2h/([0-9]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/n2h',
             0 => 'N',
         ],
 
         'GET /h2n/([a-zA-Z0-9-]+)' => [
             'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/json',
+            'LAYOUT' => 'json',
             'PAGE' => 'jars/http/n2h',
             0 => 'H',
         ],

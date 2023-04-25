@@ -5,5 +5,7 @@ $data = $jars->save($lines);
 
 return [
     'data' => $data,
-    'version' => $jars->version(),
+    'headers' => [
+        'X-Version' => $jars->version(),
+    ],
 ];
