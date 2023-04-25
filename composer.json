@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "minimum-stability": "dev",
     "require": {
-        "oranfry\/jars-core": "*",
         "oranfry\/subsimple": "*"
     },
     "autoload": {
