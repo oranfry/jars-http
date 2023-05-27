@@ -1,9 +1,11 @@
 <?php
 
-$jars->logout();
+$success = $jars->logout();
 
 return [
-    'data' => [],
+    'data' => [
+        'success' => $success,
+    ],
     'headers' => [
         'X-Version' => $jars->version(),
     ],
