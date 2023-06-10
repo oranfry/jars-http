@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->n2h(N);
+
 return [
-    'data' => $jars->n2h(N),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

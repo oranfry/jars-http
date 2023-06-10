@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->groups(REPORT_NAME, @getallheaders()['X-Min-Version']);
+
 return [
-    'data' => $jars->groups(REPORT_NAME, @getallheaders()['X-Min-Version']),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

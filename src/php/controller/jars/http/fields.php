@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->fields(LINETYPE_NAME);
+
 return [
-    'data' => $jars->fields(LINETYPE_NAME),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

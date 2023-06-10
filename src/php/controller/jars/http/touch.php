@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->touch();
+
 return [
-    'data' => $jars->touch(),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

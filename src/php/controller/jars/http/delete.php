@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->delete(LINETYPE_NAME, LINE_ID);
+
 return [
-    'data' => $jars->delete(LINETYPE_NAME, LINE_ID),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

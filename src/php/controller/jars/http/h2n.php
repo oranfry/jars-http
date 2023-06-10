@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->h2n(H);
+
 return [
-    'data' => $jars->h2n(H),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],

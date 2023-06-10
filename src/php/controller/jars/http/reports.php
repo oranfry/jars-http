@@ -1,7 +1,9 @@
 <?php
 
+$data = $jars->reports();
+
 return [
-    'data' => $jars->reports(),
+    'data' => $data,
     'headers' => [
         'X-Version' => $jars->version(),
     ],
