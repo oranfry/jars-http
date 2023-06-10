@@ -151,7 +151,7 @@ class HttpRouter extends \subsimple\Router
         'GET /h2n/([a-zA-Z0-9-]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/n2h',
+            'PAGE' => 'jars/http/h2n',
             0 => 'H',
         ],
    ];
