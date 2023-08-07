@@ -1,6 +1,6 @@
 <?php
 
-$data = $jars->groups(REPORT_NAME, @getallheaders()['X-Min-Version']);
+$data = $jars->groups(REPORT_NAME, PREFIX, @getallheaders()['X-Min-Version']);
 
 return [
     'data' => $data,

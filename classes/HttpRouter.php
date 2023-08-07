@@ -2,6 +2,8 @@
 
 namespace jars\http;
 
+use jars\contract\Constants;
+
 class HttpRouter extends \subsimple\Router
 {
     protected static $routes = [
@@ -116,14 +118,15 @@ class HttpRouter extends \subsimple\Router
             0 => 'REPORT_NAME',
         ],
 
-        'GET /report/([a-z]+)/groups' => [
+        'GET /report/([a-z]+)/(' . Constants::GROUP_PREFIX_PATTERN . ')' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/groups',
             0 => 'REPORT_NAME',
+            1 => 'PREFIX',
         ],
 
-        'GET /report/([a-z]+)/([a-zA-Z0-9-]+)' => [
+        'GET /report/([a-z]+)/(' . Constants::GROUP_PATTERN . ')' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/group',

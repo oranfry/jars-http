@@ -1,13 +1,12 @@
 {
-    "name": "oranfry\/jars-http",
-    "version": "1.0.0",
-    "minimum-stability": "dev",
-    "require": {
-        "oranfry\/subsimple": "*"
-    },
     "autoload": {
         "psr-4": {
             "jars\\http\\": "classes"
         }
+    },
+    "name": "oranfry/jars-http",
+    "require": {
+        "oranfry/jars-contracts": "*",
+        "oranfry/subsimple": "*"
     }
 }
