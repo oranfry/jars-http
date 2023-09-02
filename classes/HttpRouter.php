@@ -36,6 +36,65 @@ class HttpRouter extends \subsimple\Router
         ],
 
         /***************************************
+         *               RECORD                *
+         ***************************************/
+
+        'GET /record/([a-z_]+)/([a-zA-Z0-9]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'jars/http/file',
+            'PAGE' => 'jars/http/record',
+            0 => 'TABLE_NAME',
+            1 => 'RECORD_ID',
+        ],
+
+        /***************************************
+         *               REPORT                *
+         ***************************************/
+
+        'GET /reports' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/reports',
+        ],
+
+        'GET /report/([a-z]+)/linetypes' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/linetypes',
+            0 => 'REPORT_NAME',
+        ],
+
+        'GET /report/([a-z]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/group',
+            'GROUP' => '',
+            0 => 'REPORT_NAME',
+        ],
+
+        'GET /report/([a-z]+)/(' . Constants::GROUP_PREFIX_PATTERN . ')' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/groups',
+            0 => 'REPORT_NAME',
+            1 => 'PREFIX',
+        ],
+
+        'GET /report/([a-z]+)/(' . Constants::GROUP_PATTERN . ')' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/group',
+            0 => 'REPORT_NAME',
+            1 => 'GROUP',
+        ],
+
+        'GET /refresh' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/refresh',
+        ],
+
+        /***************************************
          *                LINE                 *
          ***************************************/
 
@@ -87,57 +146,6 @@ class HttpRouter extends \subsimple\Router
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/linetypes',
             'REPORT_NAME' => null,
-        ],
-
-        /***************************************
-         *               RECORD                *
-         ***************************************/
-
-        'GET /record/([a-z_]+)/([a-zA-Z0-9]+)' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'jars/http/file',
-            'PAGE' => 'jars/http/record',
-            0 => 'TABLE_NAME',
-            1 => 'RECORD_ID',
-        ],
-
-        /***************************************
-         *               REPORT                *
-         ***************************************/
-
-        'GET /reports' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/reports',
-        ],
-
-        'GET /report/([a-z]+)/linetypes' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/linetypes',
-            0 => 'REPORT_NAME',
-        ],
-
-        'GET /report/([a-z]+)/(' . Constants::GROUP_PREFIX_PATTERN . ')' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/groups',
-            0 => 'REPORT_NAME',
-            1 => 'PREFIX',
-        ],
-
-        'GET /report/([a-z]+)/(' . Constants::GROUP_PATTERN . ')' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/group',
-            0 => 'REPORT_NAME',
-            1 => 'GROUP',
-        ],
-
-        'GET /refresh' => [
-            'AUTHSCHEME' => 'header',
-            'LAYOUT' => 'json',
-            'PAGE' => 'jars/http/refresh',
         ],
 
         /***************************************
