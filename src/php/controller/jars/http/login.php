@@ -1,12 +1,7 @@
 <?php
 
-$data = json_decode(file_get_contents('php://input'));
+$credentials = json_decode(file_get_contents('php://input'));
+$data = $jars->login(@$credentials->username, @$credentials->password);
+$headers = ['X-Version' => $jars->version()];
 
-$data = $jars->login(@$data->username, @$data->password);
-
-return [
-    'data' => $data,
-    'headers' => [
-        'X-Version' => $jars->version(),
-    ],
-];
+return compact('data', 'headers');
