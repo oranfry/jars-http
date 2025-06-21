@@ -6,7 +6,7 @@
     },
     "name": "oranfry/jars-http",
     "require": {
-        "oranfry/jars-contracts": "^7",
+        "oranfry/jars-contracts": "^8.0.0",
         "oranfry/subsimple": "*"
     }
 }
