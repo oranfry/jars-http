@@ -36,6 +36,24 @@ class HttpRouter extends \subsimple\Router
         ],
 
         /***************************************
+         *                INFO                 *
+         ***************************************/
+
+        'GET /info' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/info',
+            'VARNAME' => null,
+        ],
+
+        'GET /info/([_a-zA-Z]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/info',
+            0 => 'VARNAME',
+        ],
+
+        /***************************************
          *               RECORD                *
          ***************************************/
 
