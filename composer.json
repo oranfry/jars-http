@@ -1,12 +1,12 @@
 {
     "autoload": {
         "psr-4": {
-            "jars\\http\\": "classes"
+            "OranFry\\Jars\\HTTP\\": "classes"
         }
     },
     "name": "oranfry/jars-http",
     "require": {
-        "oranfry/jars-contracts": "^9.0.0",
+        "oranfry/jars-contracts": "dev-chain",
         "oranfry/subsimple": "*"
     }
 }

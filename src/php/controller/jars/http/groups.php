@@ -1,10 +1,7 @@
 <?php
 
-$data = $jars->groups(REPORT_NAME, PREFIX, @getallheaders()['X-Min-Version']);
+[$minVersion, $timeout] = Helper::getMinVersionHeaders();
 
 return [
-    'data' => $data,
-    'headers' => [
-        'X-Version' => $jars->version(),
-    ],
+    'data' => $jars->groups(REPORT_NAME, PREFIX, $minVersion),
 ];
