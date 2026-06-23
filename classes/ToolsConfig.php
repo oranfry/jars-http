@@ -1,6 +1,6 @@
 <?php
 
-namespace jars\http;
+namespace OranFry\Jars\HTTP;
 
 class ToolsConfig extends \Tools\Config
 {

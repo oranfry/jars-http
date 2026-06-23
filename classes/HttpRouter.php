@@ -1,8 +1,8 @@
 <?php
 
-namespace jars\http;
+namespace OranFry\Jars\HTTP;
 
-use jars\contract\Constants;
+use OranFry\Jars\Contract\Constants;
 
 class HttpRouter extends \subsimple\Router
 {
