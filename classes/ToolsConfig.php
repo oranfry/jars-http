@@ -2,7 +2,7 @@
 
 namespace OranFry\Jars\HTTP;
 
-class ToolsConfig extends \Tools\Config
+class ToolsConfig extends \OranFry\Tools\Config
 {
     public function defaults(): array
     {

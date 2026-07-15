@@ -4,7 +4,7 @@ namespace OranFry\Jars\HTTP;
 
 use OranFry\Jars\Contract\Constants;
 
-class HttpRouter extends \subsimple\Router
+class HttpRouter extends \OranFry\Subsimple\Router
 {
     protected static $routes = [
         /***************************************
