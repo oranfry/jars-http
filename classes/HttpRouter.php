@@ -54,6 +54,24 @@ class HttpRouter extends \OranFry\Subsimple\Router
         ],
 
         /***************************************
+         *                EXTRA                *
+         ***************************************/
+
+        'GET /extra' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/extra',
+            'KEY' => null,
+        ],
+
+        'GET /extra/([_a-zA-Z]+)' => [
+            'AUTHSCHEME' => 'header',
+            'LAYOUT' => 'json',
+            'PAGE' => 'jars/http/extra',
+            0 => 'KEY',
+        ],
+
+        /***************************************
          *               RECORD                *
          ***************************************/
 
