@@ -157,7 +157,7 @@ class HttpRouter extends \OranFry\Subsimple\Router
             0 => 'LINETYPE_NAME',
         ],
 
-        'POST /([a-z]+)/([a-zA-Z0-9]+)' => [
+        'POST /get/([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/get',
