@@ -157,7 +157,7 @@ class HttpRouter extends \OranFry\Subsimple\Router
             0 => 'LINETYPE_NAME',
         ],
 
-        'GET /([a-z]+)/([a-zA-Z0-9]+)' => [
+        'POST /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/get',
@@ -167,7 +167,7 @@ class HttpRouter extends \OranFry\Subsimple\Router
 
         // delete
 
-        'DELETE /([a-z]+)/([a-zA-Z0-9]+)' => [
+        'DELETE' . ' /([a-z]+)/([a-zA-Z0-9]+)' => [
             'AUTHSCHEME' => 'header',
             'LAYOUT' => 'json',
             'PAGE' => 'jars/http/delete',
